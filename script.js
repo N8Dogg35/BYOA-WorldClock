@@ -179,7 +179,10 @@ async function updateDetailedWeather() {
 
         // Update the cities table
         const tbody = document.getElementById(`${zone}-cities`);
-        if (!tbody) continue; // Skip if tbody doesn't exist
+        if (!tbody) {
+            console.error(`Could not find tbody for zone: ${zone}`);
+            continue;
+        }
 
         tbody.innerHTML = ''; // Clear existing rows
 
@@ -212,7 +215,6 @@ async function updateDetailedWeather() {
                     }
                 }
 
-                // Create and append the row
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${city.name}</td>
@@ -227,7 +229,6 @@ async function updateDetailedWeather() {
                 tbody.appendChild(row);
             } catch (error) {
                 console.error(`Error fetching weather for ${city.name}:`, error);
-                // Add error row
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${city.name}</td>
@@ -255,10 +256,14 @@ setInterval(() => {
     });
 }, 60000);
 
-// Initial call to populate data
+// Initial calls to populate data
+updateTime();
+updateTemperature();
 updateDetailedWeather();
 
-// Update weather data every 5 minutes
+// Set up intervals for updates
+setInterval(updateTime, 1000);
+setInterval(updateTemperature, 5 * 60 * 1000);
 setInterval(updateDetailedWeather, 5 * 60 * 1000);
 
 // Accordion functionality

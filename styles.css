@@ -115,19 +115,23 @@ h2 {
     margin-bottom: 10px;
     border: 1px solid #eee;
     border-radius: 5px;
+    background-color: white;
+}
+
+.timezone-group > .accordion-content + .table-header {
+    display: none;
 }
 
 .accordion-header {
     width: 100%;
     padding: 15px 20px;
-    background: none;
+    background-color: #f8f9fa;
     border: none;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     cursor: pointer;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    font-family: 'Alexandria', sans-serif;
+    margin: 0;
 }
 
 .accordion-header:hover {
@@ -138,6 +142,8 @@ h2 {
     margin-right: 10px;
     transition: transform 0.3s ease;
     font-size: 12px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .accordion-header.active .accordion-icon {
@@ -271,7 +277,8 @@ h2 {
 }
 
 @media (max-width: 480px) {
-    /* Hide table headers on mobile */
+    /* Hide ALL table headers on mobile */
+    .timezone-group .table-header,
     .timezone-group thead {
         display: none;
     }
