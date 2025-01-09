@@ -1,0 +1,89 @@
+body {
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(45deg, #b3e0ff, #66b3ff); /* Lighter blue gradient */
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+}
+
+.clock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.clock-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+.timezone {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.time {
+    font-size: 2em;
+    margin: 5px 0 15px 0;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.temp {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #7f8c8d;
+    font-weight: 400;
+}
+
+/* Temperature range colors */
+.temp-below-0 {
+    background-color: #9b59b6; /* purple */
+}
+
+.temp-0-31 {
+    background-color: #3498db; /* blue */
+}
+
+.temp-32-50 {
+    background-color: #2ecc71; /* green */
+}
+
+.temp-51-70 {
+    background-color: #f1c40f; /* yellow */
+}
+
+.temp-71-90 {
+    background-color: #e67e22; /* orange */
+}
+
+.temp-above-90 {
+    background-color: #e74c3c; /* red */
+} 
