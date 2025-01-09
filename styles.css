@@ -54,13 +54,23 @@ h2 {
 }
 
 .temp {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 1.2em;
     color: white;
     background-color: #7f8c8d;
     font-weight: 400;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.weather-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
 }
 
 /* Temperature range colors */
@@ -86,4 +96,243 @@ h2 {
 
 .temp-above-90 {
     background-color: #e74c3c; /* red */
+}
+
+.timezone-table {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.timezone-table h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.timezone-group {
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    font-family: 'Alexandria', sans-serif;
+}
+
+.accordion-header:hover {
+    background-color: #e9ecef;
+}
+
+.accordion-icon {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(90deg);
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-weight: 500;
+    color: #2c3e50;
+    font-family: 'Alexandria', sans-serif;
+}
+
+.accordion-content {
+    display: none;
+    padding: 20px;
+}
+
+.accordion-content.active {
+    display: block;
+}
+
+/* Standardized column widths */
+.col-city {
+    width: 25%;
+}
+
+.col-time {
+    width: 15%;
+}
+
+.col-weather {
+    width: 30%;
+}
+
+.col-precip {
+    width: 20%;
+}
+
+.col-temp {
+    width: 25%;
+}
+
+/* Table styles */
+.timezone-group table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Alexandria', sans-serif;
+}
+
+.timezone-group th,
+.timezone-group td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.timezone-group th {
+    font-weight: 500;
+    color: #666;
+    background-color: #f8f9fa;
+}
+
+.detailed-weather {
+    display: flex;
+    align-items: center;
+}
+
+.detailed-weather img {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .timezone-group table {
+        font-size: 0.9em;
+    }
+
+    .col-city {
+        width: 20%;
+    }
+    
+    .col-time {
+        width: 20%;
+    }
+    
+    .col-weather {
+        width: 35%;
+    }
+    
+    .col-temp {
+        width: 25%;
+    }
+}
+
+@media (max-width: 576px) {
+    .timezone-group td {
+        padding: 8px;
+    }
+
+    .detailed-weather {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detailed-weather img {
+        margin-bottom: 4px;
+    }
+
+    .col-city {
+        width: auto;
+    }
+    
+    .col-time {
+        width: auto;
+    }
+    
+    .col-weather {
+        width: auto;
+    }
+    
+    .col-temp {
+        width: auto;
+    }
+
+    .timezone-group td:first-child {
+        /* Style for city names in mobile view */
+        white-space: normal;
+        word-wrap: break-word;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hide table headers on mobile */
+    .timezone-group thead {
+        display: none;
+    }
+
+    /* Convert table rows to cards */
+    .timezone-group tr {
+        display: grid;
+        grid-template-areas:
+            "city temp"
+            "weather precip";
+        grid-template-columns: 1fr 1fr;
+        padding: 12px 8px;
+    }
+
+    .timezone-group td {
+        padding: 4px;
+        border: none;
+        display: flex;
+        align-items: center; /* Vertically center all content */
+    }
+
+    /* Arrange cells in grid areas */
+    .timezone-group td:nth-child(1) { /* City */
+        grid-area: city;
+        font-weight: 500;
+    }
+
+    .timezone-group td:nth-child(2) { /* Temperature */
+        grid-area: temp;
+        text-align: right;
+        justify-content: center; /* Center the temperature */
+        padding-right: 8px; /* Add some padding from the right edge */
+    }
+
+    .timezone-group td:nth-child(3) { /* Weather */
+        grid-area: weather;
+        justify-content: center;
+        padding-left: 8px;
+    }
+
+    .timezone-group td:nth-child(4) { /* Precipitation */
+        grid-area: precip;
+        text-align: right;
+        justify-content: center; /* Center the precipitation text */
+        padding-right: 8px; /* Add some padding from the right edge */
+    }
+
+    .detailed-weather {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start; /* Left align but keep content centered vertically */
+    }
+
+    .detailed-weather img {
+        margin-right: 8px;
+        margin-bottom: 0;
+    }
+
+    /* Ensure the grid columns are equal */
+    .timezone-group tr {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px; /* Add some gap between grid items */
+    }
 } 

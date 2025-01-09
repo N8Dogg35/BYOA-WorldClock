@@ -51,6 +51,130 @@
                 <div class="temp" id="telaviv-temp">Loading...</div>
             </div>
         </div>
+        
+        <div class="timezone-table">
+            <h2>Detailed Weather by Time Zone</h2>
+            
+            <div class="timezone-group">
+                <button class="accordion-header">
+                    <span class="accordion-icon">▶</span>
+                    <h3 data-zone="pacific">Pacific Time (UTC-7)</h3>
+                </button>
+                <div class="accordion-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="col-city">City</th>
+                                <th class="col-temp">Temperature</th>
+                                <th class="col-weather">Weather</th>
+                                <th class="col-precip">Precipitation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pacific-cities"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="timezone-group">
+                <button class="accordion-header">
+                    <span class="accordion-icon">▶</span>
+                    <h3 data-zone="mountain">Mountain Time (UTC-6)</h3>
+                </button>
+                <div class="accordion-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="col-city">City</th>
+                                <th class="col-temp">Temperature</th>
+                                <th class="col-weather">Weather</th>
+                                <th class="col-precip">Precipitation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mountain-cities"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="timezone-group">
+                <button class="accordion-header">
+                    <span class="accordion-icon">▶</span>
+                    <h3 data-zone="central">Central Time (UTC-5)</h3>
+                </button>
+                <div class="accordion-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="col-city">City</th>
+                                <th class="col-temp">Temperature</th>
+                                <th class="col-weather">Weather</th>
+                                <th class="col-precip">Precipitation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="central-cities"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="timezone-group">
+                <button class="accordion-header">
+                    <span class="accordion-icon">▶</span>
+                    <h3 data-zone="eastern">Eastern Time (UTC-4)</h3>
+                </button>
+                <div class="accordion-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="col-city">City</th>
+                                <th class="col-temp">Temperature</th>
+                                <th class="col-weather">Weather</th>
+                                <th class="col-precip">Precipitation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eastern-cities"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="timezone-group">
+                <button class="accordion-header">
+                    <span class="accordion-icon">▶</span>
+                    <h3 data-zone="london">British Time (UTC+1)</h3>
+                </button>
+                <div class="accordion-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="col-city">City</th>
+                                <th class="col-temp">Temperature</th>
+                                <th class="col-weather">Weather</th>
+                                <th class="col-precip">Precipitation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="london-cities"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="timezone-group">
+                <button class="accordion-header">
+                    <span class="accordion-icon">▶</span>
+                    <h3 data-zone="israel">Israel Time (UTC+3)</h3>
+                </button>
+                <div class="accordion-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="col-city">City</th>
+                                <th class="col-temp">Temperature</th>
+                                <th class="col-weather">Weather</th>
+                                <th class="col-precip">Precipitation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="israel-cities"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
